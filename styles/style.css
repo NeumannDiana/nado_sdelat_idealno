@@ -1,108 +1,86 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 html {
     height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-blockquote {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: inherit;
-}
-
-img {
-    width: 100%;
-}
-
-.bgVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+body {
     height: inherit;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 800px;
+    background-color: #fdafe8;
+    border-color: transparent;
+    padding-top: 1px;
+}
+
+body::after {
+    content: '';
+    opacity: 0.3;
+    background-color: #fff;
+    inset: 0;
+    position: absolute;
+}
+
+video {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: -1;
-}
 
-.page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding-top:60px;
-    min-width: 800px;
-    height: inherit;
-    font-family: "Raleway", sans-serif;
-    z-index: 0;
-    background-color: rgb(245, 202, 236);
-}
-
-.page::before {
-    content: '';
     position: absolute;
-    height: 100%;
     inset: 0;
-    z-index: -1;
-    background: rgba(255, 255, 255, 0.30);
 }
 
-.page__title {
-    font-weight: 800;
-    font-size: 116px;
-    line-height: normal;
-    width: 780px;
-    letter-spacing: 4.06px;
+.page__heading {
+    color: #000;
     text-align: center;
+    
+    font-size: 116px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 4.06px;
     text-transform: uppercase;
+  
+    padding-top: 60px;
+    max-width: 740px;
+
+    z-index: 3;
 }
 
-.page__title::after {
-    display: inline;
-    content:'*';
+.page__heading::after {
+    content: '*';
 }
-.page__title:hover {
+
+.page__heading:hover {
     color: #4c4c4c;
     cursor: default;
 }
-.page__title:hover::before {
-    position: absolute;
-    right: 22px;
-    top: 182px;
-    z-index: 1;
+
+
+.page__heading:hover::before {
     content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
     white-space: pre;
-    word-spacing: normal;
-    background-color: white;
-    padding: 36px 44px;
-    width: 742px;
-    border: 2px solid black;
-    border-radius: 20px;
-    color: #000;
-    box-shadow:0 14px black;
+    
 
-    text-align: left;
-    font-weight: 400;
-    line-height: 1;
+    color: #000;
     font-size: 35px;
-    letter-spacing: normal;
-    text-transform: initial;
-}
+    font-weight: 400;
+
+    position: absolute;
+
+    min-width: 745px;
+    border: 2px solid black;
+    padding: 36px 44px;
+    border-radius: 20px;
+    background-color: #fff;
+    text-transform: none;
+    letter-spacing: 0;
+    text-align: left;
+    box-shadow: 0 14px 0 #000;
+    line-height: 35px;
+
+    top: 182px;
+    right: 22px;
+    z-index: 1;
+} 
