@@ -85,7 +85,7 @@ img {
 }
 .page__title:hover::before {
     position: absolute;
-    right: 208px;
+    right: 22px;
     top: 182px;
     z-index: 1;
     content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
